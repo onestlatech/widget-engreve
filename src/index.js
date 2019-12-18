@@ -143,6 +143,11 @@ function initializeInterface() {
     maximize()
   }
 
+  if (!query.minMode) {
+    const fullPageFooter = document.querySelector('.dcs-full-page__footer');
+    fullPageFooter.style.display = 'none'
+  }
+
   // Set display dates on full-size widget
   var fullscreenDateString = getFormattedDate(fullPageDisplayStartDate, language)
   var nextDayDateString = getFormattedDate(fullPageDisplayStopDate, language)
