@@ -1,12 +1,14 @@
 full_page:
   body: '
-      <span class="dcs-website-name__default">Notre</span>
+      Contre la destruction de notre modèle social.<br />
+      Contre l&apos;augmentation croissante des inégalités. <br />
+      Contre la stigmatisation systématique des plus fragiles. <br />
+      <span class="dcs-website-name__default">Ce</span>
       <span class="dcs-website-name__prefix">Le</span>
       <span class="dcs-website-name__website">site</span>
       <span class="dcs-website-name"></span>
-      est en grève contre la réforme des retraites et son monde.<br />
-      Rejoignez-nous !'
-  ready:  'Je suis prêt⋅e ➔'
+      est en grève.'
+  ready:  'Notre appel ➔'
   footer: 'Vous serez en mesure d&apos;accéder à ce site le <time id="dcs-tomorrow-date" datetime=""></time>'
 footer:
   body: 'Notre site s&apos;oppose à la réforme des retraites et se mobilisera le <time id="dcs-strike-date" datetime=""></time>. Et vous ?'

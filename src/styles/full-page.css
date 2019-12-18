@@ -43,7 +43,13 @@
 }
 
 .dcs-full-page__body p {
-  font: normal 3.2rem/3.5rem 'Greve';
+  font: normal 2.25rem/3.5rem 'Greve';
+}
+
+@media only screen and (max-width: 767px) {
+  .dcs-full-page__body p {
+    font: normal 1.5rem/2rem 'Greve';
+  }
 }
 
 .dcs-full-page__action {
