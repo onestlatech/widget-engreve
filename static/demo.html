@@ -15,7 +15,7 @@
   </style>
   <script>
     var iframeHost = window.location.origin;
-    var fullPage = window.location.toString().indexOf('fullPage') !== -1;
+    var minMode = window.location.toString().indexOf('minMode') !== -1;
     var showCloseButton = window.location.toString().indexOf('showCloseButton') !== -1;
 
     var urlParams = new URLSearchParams(window.location.search);
@@ -23,7 +23,7 @@
 
     var DIGITAL_STRIKE_OPTIONS = {
       iframeHost: iframeHost,
-      forceFullPageWidget: fullPage,
+      minMode: minMode,
       showCloseButtonOnFullPageWidget: showCloseButton,
       alwaysShowWidget: true,
       websiteName: 'Demo',
