@@ -4,14 +4,12 @@ full_page:
       <span class="dcs-website-name__prefix">Le</span>
       <span class="dcs-website-name__website">site</span>
       <span class="dcs-website-name"></span>
-      rejoint<br />
-      la mobilisation<br />
-      contre la réforme des retraites et son monde.<br />
-      Et vous ?'
+      est en grève contre la réforme des retraites et son monde.<br />
+      Rejoignez-nous !'
   ready:  'Je suis prêt⋅e ➔'
-  footer: 'Vous serez en mesure d&apos;accéder à ce site demain, le <time id="dcs-tomorrow-date" datetime="2019-12-19">19 septembre</time>'
+  footer: 'Vous serez en mesure d&apos;accéder à ce site le <time id="dcs-tomorrow-date" datetime=""></time>'
 footer:
-  body: 'Notre site s'oppose à la réforme des retraites et se mobilisera le <time id="dcs-strike-date" datetime="2019-12-18">18 septembre</time>. Et vous ?'
+  body: 'Notre site s&apos;oppose à la réforme des retraites et se mobilisera le <time id="dcs-strike-date" datetime=""></time>. Et vous ?'
   ready: 'J&apos;en suis. ➔'
 
 title: 'Grêve numérique  contre la réforme des retraites et son monde'
