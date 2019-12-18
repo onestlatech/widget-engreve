@@ -49,7 +49,7 @@ Puis, le jour de mobilisation (:warning: à configurer) cette bannière s'étend
 
 <!-- ![A screenshot of the Digital Climate Strike full page widget]() -->
 
-Si vous ne pouvez vous permettre de bloquer l'accès à votre site, il est également possible de configurer le widget afin de permettre à l'utilisateur de le fermer une fois le message affiché ([demo :warning: de digitalclimatestriker](https://assets.digitalclimatestrike.net/demo.html?fullPage&showCloseButton)).
+Si vous ne pouvez vous permettre de bloquer l'accès à votre site, il est également possible de configurer le widget afin de permettre à l'utilisateur de le fermer une fois le message affiché ([demo :warning: de digitalclimatestriker](https://assets.digitalclimatestrike.net/demo.html?minMode&showCloseButton)).
 
 <!-- ![A screenshot of the Digital Climate Strike full page widget with close button]() -->
 
@@ -87,9 +87,10 @@ Définir un objet `DIGITAL_STRIKE_OPTIONS` avant d'inclure ce widget à votre si
     alwaysShowWidget: false, // @type {boolean}
 
     /**
-     * Automatically makes the widget full page. Defaults to false.
+     * Afficher le widget en mode footer en dehors des dates prévues (voir fullPageDisplayStartDate)
+     * false par défault: affichage en mode "full page" tous les jours
      */
-    forceFullPageWidget: false, // @type {boolean}
+    minMode: true, // @type {boolean}
     
     /**
     * For the full page widget, shows a close button "x" and hides the message about the site being 

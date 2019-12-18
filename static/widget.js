@@ -9,11 +9,11 @@
   var options = window.DIGITAL_STRIKE_OPTIONS || {};
   var iframeHost = options.iframeHost !== undefined ? options.iframeHost : 'https://assets.digitalclimatestrike.net';
   var websiteName = options.websiteName || null;
-  var footerDisplayStartDate = options.footerDisplayStartDate || new Date(1990, 10, 10);  // arbitrary date in the past
+  var footerDisplayStartDate = options.footerDisplayStartDate || new Date(1990, 10, 10);
   const nextTuesday = new Date();
   nextTuesday.setDate(nextTuesday.getDate() + ((7-nextTuesday.getDay())%7+2) % 7);
   var fullPageDisplayStartDate = options.fullPageDisplayStartDate || nextTuesday;
-  var forceFullPageWidget = !!options.forceFullPageWidget;
+  var minMode = !(options.minMode === false);
   var cookieExpirationDays = parseFloat(options.cookieExpirationDays || 1);
   var alwaysShowWidget = !!(options.alwaysShowWidget || window.location.hash.indexOf('ALWAYS_SHOW_DIGITAL_STRIKE') !== -1);
   var disableGoogleAnalytics = !!options.disableGoogleAnalytics;
@@ -30,7 +30,7 @@
       ['language', language]
     ];
 
-    forceFullPageWidget && urlParams.push(['forceFullPageWidget', 'true']);
+    minMode && urlParams.push(['minMode', 'true']);
     showCloseButtonOnFullPageWidget && urlParams.push(['showCloseButtonOnFullPageWidget', 'true']);
     disableGoogleAnalytics && urlParams.push(['googleAnalytics', 'false']);
     websiteName && urlParams.push(['websiteName', encodeURI(websiteName)]);

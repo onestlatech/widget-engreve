@@ -116,7 +116,7 @@ function initializeInterface() {
   const query = parseQuery(location.search)
   const fullPageDisplayStartDate = new Date(Date.parse(query.fullPageDisplayStartDate))
   const fullPageDisplayStopDate = new Date(fullPageDisplayStartDate.getTime() + MS_PER_DAY)
-  const isFullPage = query.forceFullPageWidget || todayIs(fullPageDisplayStartDate)
+  const isFullPage = !query.minMode || todayIs(fullPageDisplayStartDate)
 
   joinUrls = isFullPage ? GLOBAL_STRIKE_FULL_PAGE_URLS : GLOBAL_STRIKE_URLS
 
