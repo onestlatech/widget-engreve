@@ -1,19 +1,19 @@
 (function() {
   'use strict';
-  var DOM_ID = 'DIGITAL_CLIMATE_STRIKE';
-  var CLOSED_COOKIE = '_DIGITAL_CLIMATE_STRIKE_WIDGET_CLOSED_';
+  var DOM_ID = 'DIGITAL_STRIKE';
+  var CLOSED_COOKIE = '_DIGITAL_STRIKE_WIDGET_CLOSED_';
   var NOW = new Date().getTime();
   var MS_PER_DAY = 86400000;
 
   // user-configurable options
-  var options = window.DIGITAL_CLIMATE_STRIKE_OPTIONS || {};
+  var options = window.DIGITAL_STRIKE_OPTIONS || {};
   var iframeHost = options.iframeHost !== undefined ? options.iframeHost : 'https://assets.digitalclimatestrike.net';
   var websiteName = options.websiteName || null;
   var footerDisplayStartDate = options.footerDisplayStartDate || new Date(2019, 7, 1);       // August 1st, 2019 - arbitrary date in the past
   var fullPageDisplayStartDate = options.fullPageDisplayStartDate || new Date(2019, 8, 20);  // September 20th, 2019
   var forceFullPageWidget = !!options.forceFullPageWidget;
   var cookieExpirationDays = parseFloat(options.cookieExpirationDays || 1);
-  var alwaysShowWidget = !!(options.alwaysShowWidget || window.location.hash.indexOf('ALWAYS_SHOW_DIGITAL_CLIMATE_STRIKE') !== -1);
+  var alwaysShowWidget = !!(options.alwaysShowWidget || window.location.hash.indexOf('ALWAYS_SHOW_DIGITAL_STRIKE') !== -1);
   var disableGoogleAnalytics = !!options.disableGoogleAnalytics;
   var showCloseButtonOnFullPageWidget = !!options.showCloseButtonOnFullPageWidget;
   var language = getLanguage();
@@ -151,7 +151,7 @@
   }
 
   function receiveMessage(event) {
-    if (!event.data.DIGITAL_CLIMATE_STRIKE) return;
+    if (!event.data.DIGITAL_STRIKE) return;
     if (event.origin.lastIndexOf(iframeHost, 0) !== 0) return;
 
     switch (event.data.action) {
