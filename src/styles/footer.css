@@ -1,7 +1,7 @@
 /* footer */
 
 .dcs-footer {
-  background-color: var(--bg-color, #cc3300);
+  background-color: var(--bg-color, var(--default-bg-color));
   bottom: 0;
   box-shadow: 0 0 1.6rem rgba(0, 0, 0, 0.2);
   font-family: 'Katwijk Bold';
