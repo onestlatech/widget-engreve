@@ -2,7 +2,7 @@
 
 .dcs-full-page {
   align-items: center;
-  background-color: var(--green);
+  background-color: var(--bg-color, var(--default-bg-color));
   bottom: 0;
   color: var(--grey);
   display: none;
