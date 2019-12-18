@@ -1,9 +1,8 @@
 import './main.css'
 
 const MS_PER_DAY = 86400000
-const GOOGLE_ANALYTICS_DELAY_MS = 30
 
-const GLOBAL_CLIMATE_STRIKE_URLS = {
+const GLOBAL_STRIKE_URLS = {
   en: 'https://digital.globalclimatestrike.net/join/?source=digitalstrikebanner',
   es: 'https://es.globalclimatestrike.net/?source=digitalstrikebanner',
   de: 'https://de.globalclimatestrike.net/?source=digitalstrikebanner',
@@ -15,7 +14,7 @@ const GLOBAL_CLIMATE_STRIKE_URLS = {
   it: 'https://digital.globalclimatestrike.net/join/?source=digitalstrikebanner',
 }
 
-const GLOBAL_CLIMATE_STRIKE_FULL_PAGE_URLS = {
+const GLOBAL_STRIKE_FULL_PAGE_URLS = {
   en: 'https://globalclimatestrike.net/digital-strike-day/?source=digitalstrikebanner',
   es: 'https://es.globalclimatestrike.net/digital-strike-day/?source=digitalstrikebanner',
   de: 'https://de.globalclimatestrike.net/digital-strike-day/?source=digitalstrikebanner',
@@ -79,10 +78,6 @@ function handleCustomWebsiteName(websiteName) {
   websiteNameText.innerHTML = decodeURI(websiteName)
 }
 
-function isTruthy(str) {
-  return typeof(str) === 'undefined' || `${str}` === 'true' || `${str}` === '1'
-}
-
 function parseQuery(queryString) {
   var query = {}
   var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&')
@@ -96,7 +91,7 @@ function parseQuery(queryString) {
 function postMessage(action, data) {
   data || (data = {})
   data.action = action
-  data.DIGITAL_CLIMATE_STRIKE = true
+  data.DIGITAL_STRIKE = true
   window.parent.postMessage(data, '*')
 }
 
@@ -104,20 +99,15 @@ function handleCloseButtonClick(event) {
   event.preventDefault()
   event.stopPropagation()
 
-  //adding delay to allow google analytics call to complete
-  setTimeout(() => {
-    postMessage('closeButtonClicked')
-  }, GOOGLE_ANALYTICS_DELAY_MS)
+
+  postMessage('closeButtonClicked')
 }
 
 function handleJoinStrikeButtonClick(event) {
   event.preventDefault()
   event.stopPropagation()
 
-  //adding delay to allow google analytics call to complete
-  setTimeout(() => {
-    postMessage('buttonClicked', { linkUrl: joinUrls[language] })
-  }, GOOGLE_ANALYTICS_DELAY_MS)
+  postMessage('buttonClicked', { linkUrl: joinUrls[language] })
 }
 
 function setGlobalClimateStrikeLinkUrl(selector) {
@@ -130,50 +120,6 @@ function attachEvent(selector, event, callback) {
   for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener(event, callback)
   }
-}
-
-function initGoogleAnalytics() {
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga')
-
-  if (typeof window.ga !== 'undefined') {
-    window.ga('create', 'UA-145982710-1', 'auto')
-    window.ga('send', 'pageview')
-  }
-}
-
-function addTrackingEvents(hostname, forceFullPageWidget) {
-  attachEvent('.dcs-footer .dcs-button', 'click', () => trackEvent('footer-join-button', 'click', hostname))
-  attachEvent('.dcs-footer .dcs-close', 'click', () => trackEvent('footer-close-button', 'click', hostname))
-  attachEvent('.dcs-full-page .dcs-button', 'click', () => trackEvent('full-page-join-button', 'click', hostname))
-  attachEvent('.dcs-full-page .dcs-close', 'click', () => trackEvent('full-page-close-button', 'click', hostname))
-
-  if (forceFullPageWidget) {
-    trackEvent('full-page-widget', 'load', hostname)
-  } else {
-    trackEvent('footer-widget', 'load', hostname)
-  }
-}
-
-function trackEvent(category, action, label, value) {
-  if (!window.ga) return
-
-  const params = {
-    hitType: 'event',
-    eventCategory: category,
-    eventAction: action
-  }
-
-  if (label) {
-    params.eventLabel = label
-  }
-
-  if (value) {
-    params.eventValue = value
-  }
-  window.ga('send', params)
 }
 
 function todayIs(date) {
@@ -193,7 +139,7 @@ function initializeInterface() {
   const fullPageDisplayStopDate = new Date(fullPageDisplayStartDate.getTime() + MS_PER_DAY)
   const isFullPage = query.forceFullPageWidget || todayIs(fullPageDisplayStartDate)
 
-  joinUrls = isFullPage ? GLOBAL_CLIMATE_STRIKE_FULL_PAGE_URLS : GLOBAL_CLIMATE_STRIKE_URLS
+  joinUrls = isFullPage ? GLOBAL_STRIKE_FULL_PAGE_URLS : GLOBAL_STRIKE_URLS
 
   setGlobalClimateStrikeLinkUrl('.dcs-footer .dcs-button')
   setGlobalClimateStrikeLinkUrl('.dcs-footer__logo')
@@ -212,11 +158,6 @@ function initializeInterface() {
 
   if (query.websiteName) {
     handleCustomWebsiteName(query.websiteName)
-  }
-
-  if (isTruthy(query.googleAnalytics) && !navigator.doNotTrack) {
-    initGoogleAnalytics()
-    addTrackingEvents(query.hostname, query.forceFullPageWidget)
   }
 
   if (isFullPage) {

@@ -1,7 +1,7 @@
 {
-  "name": "digital-climate-strike-widget",
-  "version": "1.0.0",
-  "description": "Digital Climate Strike widget so anyone can join the digital climate strike",
+  "name": "widget-engreve",
+  "version": "2.0.0-alpha.1",
+  "description": "Digital Strike widget so anyone can join the digital strike against the French pension reform and its world",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.js --host 0.0.0.0",
@@ -10,13 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/global-climate-strikes/digital-climate-strike.git"
+    "url": "git+https://github.com/noelmace/widget-engreve.git"
   },
-  "author": "Global Climate Strike",
+  "author": "Noël Macé",
+  "contributors": [
+    "Global Climate Strike (no affiliation)"
+  ],
   "bugs": {
-    "url": "https://github.com/global-climate-strikes/digital-climate-strike/issues"
+    "url": "https://github.com/noelmace/widget-engreve.git/issues"
   },
-  "homepage": "https://github.com/global-climate-strikes/digital-climate-strike#readme",
+  "homepage": "https://github.com/noelmace/widget-engreve.git#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",

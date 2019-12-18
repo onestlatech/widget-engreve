@@ -2,8 +2,8 @@
 
 The widget is made of two parts:
 
-1. [widget.js](https://github.com/global-climate-strikes/digital-climate-strike/blob/master/static/widget.js) is injected into the host site and handles loading the widget iframe, ideally with minimal changes to the parent frame. This file is intentionally unminified, so it's easy for hosts to read and understand it.
-2. The main widget iframe, which is compiled by webpack from the files in [src](https://github.com/global-climate-strikes/digital-climate-strike/tree/master/src). The iframe gets all babeled up and minified into a single file, with the goal of keeping the final asset as small as possible. 
+1. [widget.js](https://github.com/noelmace/widget-engreve/blob/master/static/widget.js) is injected into the host site and handles loading the widget iframe, ideally with minimal changes to the parent frame. This file is intentionally unminified, so it's easy for hosts to read and understand it.
+2. The main widget iframe, which is compiled by webpack from the files in [src](https://github.com/noelmace/widget-engreve/tree/master/src). The iframe gets all babeled up and minified into a single file, with the goal of keeping the final asset as small as possible. 
 
 ## Requirements 
 
@@ -32,7 +32,7 @@ $ npm run lint
 
 ## Automated Deploys
 
-[TravisCI](https://travis-ci.com/fightforthefuture/digital-climate-strike/branches) is set up to build the widget and upload it to Google Cloud Storage on every commit to the master branch.
+TravisCI is set up to build the widget and upload it to Google Cloud Storage on every commit to the master branch.
 
 ## Development Docker container
 
@@ -50,7 +50,7 @@ You can modify settings by editing `docker-compose.yml` file. The container need
 
 The widget can be localized, including the date format. Following changes are needed:
 
-- `src/index.js`: constants `LOCALE_CODE_MAPPING` and `GLOBAL_CLIMATE_STRIKE_URLS` (only if there's relevant language version of https://globalclimatestrike.net/ site) need to be adjusted. For language codes, please refer to https://gist.github.com/wpsmith/7604842
+- `src/index.js`: constants `LOCALE_CODE_MAPPING` and `GLOBAL_STRIKE_URLS` (only if there's relevant language version of https://globalclimatestrike.net/ site) need to be adjusted. For language codes, please refer to https://gist.github.com/wpsmith/7604842
 - `webpack.common.js`: edit `plugins` array and add a new HtmlWebPackPlugin instance based on your language code
 - copy file `src/translations/en.yml` to `src/translations/<your-code>.yml` and translate it
 - `static/widget.js`: edit `getLanguage()` function to add default language resolution for your langcode
