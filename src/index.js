@@ -3,44 +3,23 @@ import './main.css'
 const MS_PER_DAY = 86400000
 
 const GLOBAL_STRIKE_URLS = {
-  en: 'https://digital.globalclimatestrike.net/join/?source=digitalstrikebanner',
-  es: 'https://es.globalclimatestrike.net/?source=digitalstrikebanner',
-  de: 'https://de.globalclimatestrike.net/?source=digitalstrikebanner',
-  cs: 'https://www.tydenproklima.cz',
-  fr: 'https://fr.globalclimatestrike.net/?source=digitalstrikebanner',
-  nl: 'https://globalclimatestrike.net/?source=digitalstrikebanner',
-  tr: 'https://sifirgelecek.org/',
-  pt: 'https://pt.globalclimatestrike.net/?source=digitalstrikebanner',
-  it: 'https://digital.globalclimatestrike.net/join/?source=digitalstrikebanner',
+  // en: '',
+  fr: 'https://reforme-retraite.info/',
 }
 
 const GLOBAL_STRIKE_FULL_PAGE_URLS = {
-  en: 'https://globalclimatestrike.net/digital-strike-day/?source=digitalstrikebanner',
-  es: 'https://es.globalclimatestrike.net/digital-strike-day/?source=digitalstrikebanner',
-  de: 'https://de.globalclimatestrike.net/digital-strike-day/?source=digitalstrikebanner',
-  cs: 'https://www.tydenproklima.cz',
-  fr: 'https://fr.globalclimatestrike.net/digital-strike-day/?source=digitalstrikebanner',
-  nl: 'https://globalclimatestrike.net/digital-strike-day/?source=digitalstrikebanner',
-  tr: 'https://sifirgelecek.org',
-  pt: 'https://pt.globalclimatestrike.net/digital-strike-day/?source=digitalstrikebanner',
-  it: 'https://globalclimatestrike.net/digital-strike-day/?source=digitalstrikebanner',
+  // en: '',
+  fr: 'https://reforme-retraite.info/',
 }
 
 const LOCALE_CODE_MAPPING = {
-  en: 'en-EN',
-  de: 'de-DE',
-  es: 'es-ES',
-  cs: 'cs-CZ',
+  // en: 'en-EN',
   fr: 'fr-FR',
-  nl: 'nl-NL',
-  tr: 'tr-TR',
-  pt: 'pt-BR',
-  it: 'it-IT',
 }
 
 let joinUrls = null
 let isMaximizing = false
-let language = 'en'
+let language = 'fr'
 
 function maximize() {
   if (isMaximizing) return
@@ -110,7 +89,7 @@ function handleJoinStrikeButtonClick(event) {
   postMessage('buttonClicked', { linkUrl: joinUrls[language] })
 }
 
-function setGlobalClimateStrikeLinkUrl(selector) {
+function setGlobalStrikeLinkUrl(selector) {
   const element = document.querySelector(selector)
   element.setAttribute('href', joinUrls[language])
 }
@@ -141,10 +120,10 @@ function initializeInterface() {
 
   joinUrls = isFullPage ? GLOBAL_STRIKE_FULL_PAGE_URLS : GLOBAL_STRIKE_URLS
 
-  setGlobalClimateStrikeLinkUrl('.dcs-footer .dcs-button')
-  setGlobalClimateStrikeLinkUrl('.dcs-footer__logo')
-  setGlobalClimateStrikeLinkUrl('.dcs-full-page .dcs-button')
-  setGlobalClimateStrikeLinkUrl('.dcs-full-page__logo')
+  setGlobalStrikeLinkUrl('.dcs-footer .dcs-button')
+  setGlobalStrikeLinkUrl('.dcs-footer__logo')
+  setGlobalStrikeLinkUrl('.dcs-full-page .dcs-button')
+  setGlobalStrikeLinkUrl('.dcs-full-page__logo')
   attachEvent('.dcs-close', 'click', handleCloseButtonClick)
   attachEvent('.dcs-button', 'click', handleJoinStrikeButtonClick)
   attachEvent('.dcs-footer__logo', 'click', handleJoinStrikeButtonClick)
