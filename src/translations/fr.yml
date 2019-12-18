@@ -5,16 +5,16 @@ full_page:
       <span class="dcs-website-name__website">site</span>
       <span class="dcs-website-name"></span>
       rejoint<br />
-      le mouvement de grève mondial<br />
-      #ClimateStrike aujourd&apos;hui.<br />
+      la mobilisation<br />
+      contre la réforme des retraites et son monde.<br />
       Et vous ?'
   ready:  'Je suis prêt⋅e ➔'
-  footer: 'Vous serez en mesure d&apos;accéder à ce site demain, le <time id="dcs-tomorrow-date" datetime="2019-09-21">21 septembre</time>.'
+  footer: 'Vous serez en mesure d&apos;accéder à ce site demain, le <time id="dcs-tomorrow-date" datetime="2019-12-19">19 septembre</time>'
 footer:
-  body: 'Notre site se joindra au mouvement de grève mondial #ClimateStrike le <time id="dcs-strike-date" datetime="2019-09-20">20 septembre</time>. Et vous ?'
+  body: 'Notre site s'oppose à la réforme des retraites et se mobilisera le <time id="dcs-strike-date" datetime="2019-12-18">18 septembre</time>. Et vous ?'
   ready: 'J&apos;en suis. ➔'
 
-title: 'Grêve numérique mondiale pour le climat'
+title: 'Grêve numérique  contre la réforme des retraites et son monde'
 logo_alt: 'Logo Digital Climate Strike'
 close_overlay: 'Fermer la superposition'
 close_banner: 'Fermer la bannière'

@@ -9,8 +9,8 @@
   var options = window.DIGITAL_STRIKE_OPTIONS || {};
   var iframeHost = options.iframeHost !== undefined ? options.iframeHost : 'https://assets.digitalclimatestrike.net';
   var websiteName = options.websiteName || null;
-  var footerDisplayStartDate = options.footerDisplayStartDate || new Date(2019, 7, 1);       // August 1st, 2019 - arbitrary date in the past
-  var fullPageDisplayStartDate = options.fullPageDisplayStartDate || new Date(2019, 8, 20);  // September 20th, 2019
+  var footerDisplayStartDate = options.footerDisplayStartDate || new Date(1990, 12, 17);       // arbitrary date in the past
+  var fullPageDisplayStartDate = options.fullPageDisplayStartDate || new Date(2019, 12, 18);  // September 20th, 2019
   var forceFullPageWidget = !!options.forceFullPageWidget;
   var cookieExpirationDays = parseFloat(options.cookieExpirationDays || 1);
   var alwaysShowWidget = !!(options.alwaysShowWidget || window.location.hash.indexOf('ALWAYS_SHOW_DIGITAL_STRIKE') !== -1);
@@ -20,7 +20,7 @@
 
   function getIframeSrc() {
     var src = iframeHost;
-    src += language === 'en' ? '/index.html?' : '/index-' + language + '.html?';
+    src += language === 'fr' ? '/index.html?' : '/index-' + language + '.html?';
 
     var urlParams = [
       ['hostname', window.location.host],
@@ -54,47 +54,11 @@
   }
 
   function getLanguage() {
-    var language = 'en';
+    var language = 'fr';
 
-    // Spanish is specified or no language is set and browser is set to spanish
-    if (options.language === 'es' || (!options.language && navigator && navigator.language.match(/^es/))) {
-      language = 'es';
-    }
-
-    // German is specified or no language is set and browser is set to German
-    if (options.language === 'de' || (!options.language && navigator && navigator.language.match(/^de/))) {
-      language = 'de';
-    }
-
-    // Czech is specified or no language is set and browser is set to German
-    if (options.language === 'cs' || (!options.language && navigator && navigator.language.match(/^cs/))) {
-      language = 'cs';
-    }
-
-    // French is specified or no language is set and browser is set to French
-    if (options.language === 'fr' || (!options.language && navigator && navigator.language.match(/^fr/))) {
-      language = 'fr';
-    }
-
-    // Dutch is specified or no language is set and browser is set to Dutch
-    if (options.language === 'nl' || (!options.language && navigator && navigator.language.match(/^nl/))) {
-      language = 'nl';
-    }
-
-    // Turkish is specified or no language is set and browser is set to Turkish
-    if (options.language === 'tr' || (!options.language && navigator && navigator.language.match(/^tr/))) {
-      language = 'tr';
-    }
-
-    // Portuguese is specified or no language is set and browser is set to Portuguese
-    if (options.language === 'pt' || (!options.language && navigator && navigator.language.match(/^pt/))) {
-      language = 'pt';
-    }
-
-    // Italian is specified or no language is set and browser is set to Italian
-    if (options.language === 'it' || (!options.language && navigator && navigator.language.match(/^it/))) {
-      language = 'it';
-    }
+    // if (options.language === 'en' || (!options.language && navigator && navigator.language.match(/^tr/))) {
+    //   language = 'en';
+    // }
 
     return language;
   }

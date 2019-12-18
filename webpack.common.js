@@ -130,55 +130,7 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './src/index.html',
       inlineSource: '.(js|css)$',
-      language: 'en'
-    }),
-    new HtmlWebPackPlugin({
-      template: './src/index.html',
-      inlineSource: '.(js|css)$',
-      language: 'es',
-      filename: 'index-es.html'
-    }),
-    new HtmlWebPackPlugin({
-      template: './src/index.html',
-      inlineSource: '.(js|css)$',
-      language: 'de',
-      filename: 'index-de.html'
-    }),
-    new HtmlWebPackPlugin({
-      template: './src/index.html',
-      inlineSource: '.(js|css)$',
-      language: 'cs',
-      filename: 'index-cs.html'
-    }),
-    new HtmlWebPackPlugin({
-      template: './src/index.html',
-      inlineSource: '.(js|css)$',
-      language: 'fr',
-      filename: 'index-fr.html'
-    }),
-    new HtmlWebPackPlugin({
-      template: './src/index.html',
-      inlineSource: '.(js|css)$',
-      language: 'nl',
-      filename: 'index-nl.html'
-    }),
-    new HtmlWebPackPlugin({
-      template: './src/index.html',
-      inlineSource: '.(js|css)$',
-      language: 'tr',
-      filename: 'index-tr.html'
-    }),
-    new HtmlWebPackPlugin({
-      template: './src/index.html',
-      inlineSource: '.(js|css)$',
-      language: 'pt',
-      filename: 'index-pt.html'
-    }),
-    new HtmlWebPackPlugin({
-      template: './src/index.html',
-      inlineSource: '.(js|css)$',
-      language: 'it',
-      filename: 'index-it.html'
+      language: 'fr'
     }),
     new CopyPlugin([
       { from: 'static', to: '' }

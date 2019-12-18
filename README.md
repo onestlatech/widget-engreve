@@ -79,21 +79,6 @@ Définir un objet `DIGITAL_STRIKE_OPTIONS` avant d'inclure ce widget à votre si
      */
     cookieExpirationDays: 1, // @type {number}
     
-    /**
-     * Set the language of the widget. We currently support:
-     * 'en': English
-     * 'de': German
-     * 'es': Spanish
-     * 'cs': Czech
-     * 'fr': French
-     * 'nl': Dutch
-     * 'tr': Turkish
-     * 'pt': Portuguese
-     * 'it': Italian
-     * Defaults to null, which will obey the navigator.language setting of the 
-     * viewer's browser.
-     */
-     language: null, // @type {string}
 
     /**
      * Always show the widget, even when someone has closed the widget and set the cookie on their device. 
