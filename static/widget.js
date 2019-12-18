@@ -9,8 +9,10 @@
   var options = window.DIGITAL_STRIKE_OPTIONS || {};
   var iframeHost = options.iframeHost !== undefined ? options.iframeHost : 'https://assets.digitalclimatestrike.net';
   var websiteName = options.websiteName || null;
-  var footerDisplayStartDate = options.footerDisplayStartDate || new Date(1990, 12, 17);       // arbitrary date in the past
-  var fullPageDisplayStartDate = options.fullPageDisplayStartDate || new Date(2019, 12, 18);  // September 20th, 2019
+  var footerDisplayStartDate = options.footerDisplayStartDate || new Date(1990, 10, 10);  // arbitrary date in the past
+  const nextTuesday = new Date();
+  nextTuesday.setDate(nextTuesday.getDate() + ((7-nextTuesday.getDay())%7+2) % 7);
+  var fullPageDisplayStartDate = options.fullPageDisplayStartDate || nextTuesday;
   var forceFullPageWidget = !!options.forceFullPageWidget;
   var cookieExpirationDays = parseFloat(options.cookieExpirationDays || 1);
   var alwaysShowWidget = !!(options.alwaysShowWidget || window.location.hash.indexOf('ALWAYS_SHOW_DIGITAL_STRIKE') !== -1);

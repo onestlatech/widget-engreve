@@ -100,14 +100,13 @@ Définir un objet `DIGITAL_STRIKE_OPTIONS` avant d'inclure ce widget à votre si
     /**
      * The date when the sticky footer widget should start showing on your web site.
      * Note: the month is one integer less than the number of the month. E.g. 8 is September, not August.
-     * Defaults to new Date(2019, 7, 1) (August 1st, 2019).
      */
     footerDisplayStartDate: new Date(), //@ type {Date object}
     
     /**
      * The date when the full page widget should showing on your web site for 24 hours. 
      * Note: the month is one integer less than the number of the month. E.g. 8 is September, not August.
-     * Defaults to new Date(2019, 8, 20) (September 20th, 2019)
+     * Tous les mardi par défaut.
      */
     fullPageDisplayStartDate: new Date(2019, 8, 20), //@ type {Date object}
   };
