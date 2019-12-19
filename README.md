@@ -10,6 +10,14 @@ En cas de problème ou question, n'hésitez pas à [soumettre une issue](https:/
 
 ## Comment installer ce widget
 
+Ajoutez simplement cette ligne de code à votre page web:
+
+```html
+<script src="https://noelmace.github.io/widget-engreve/widget.js" async></script>
+```
+
+:warning: compte tenu de certaines limitations de Github, il est possible que cette solution amène à de très rares moment à afficher un page d'erreur dans le widget. Si possible, nous vous encourageons à héberger vous même le contenu du widget (page index.html), comme indiqué ci-dessous.
+
 ### A partir du dépôt
 
 Pré-requis :
@@ -26,7 +34,7 @@ $ cp -r ./dist ../monsite/assets/engreve
 ```
 
 Vous devez ensuite :
-1. Donner l'URL **complète** vers le dossier `dist` via l'option iframeDir, comme indiqué dans la section suivante `DIGITAL_STRIKE_OPTIONS` et ci-dessous
+1. Donner l'URL **complète** vers le dossier `dist` via l'option `iframeDir`, comme indiqué dans la section suivante `DIGITAL_STRIKE_OPTIONS` et ci-dessous
 1. (optionnel) donner le nom de site à afficher, via l'option `websiteName`
 1. Intégrez `widget.js` à votre page
 
@@ -40,16 +48,6 @@ Vous devez ensuite :
 <script src="assets/engreve/widget.js" async></script>
 ```
 
-### CDN
-
-**:construction: non disponible pour l'instant :construction:**
-
-   Ajoutez simplement cette ligne de code à votre page web:
-
-```html
-<script src="https://cdn.jsdelivr.net/gh/noelmace/widget-engreve@2.0.0/static/widget.js" async></script>
-```
-
 ### NPM
 
 `npm i -d widget-engreve`
@@ -61,7 +59,6 @@ Quand vous ajoutez [**widget.js**](https://github.com/noelmace/widget-engreve/bl
 ![look par défaut](/doc/capture-defaut.png)
 
 Ce widget est également entièrement customisable afin de vous permettre d'adapter son comportement à vos contraintes.
-
 
 ## Customisation
 
@@ -192,6 +189,24 @@ Vous pouvez également modifier cette durée si cela vous chante:
   };
 </script>
 ```
+
+## Customisation avancée et contributions
+
+## Fonctionnement
+
+Le fichier [`widget.js`](/static/widget.js) créé une iframe, et envoie les options de customisation à celle-ci.
+
+Cette iframe charge le contenu du widget à partir:
+- de notre hébergement sur Github Page (par défaut)
+- ou de l'URL que vous aurez spécifié via l'option `iframeDir`
+
+En choisissant de builder ce widget et de l'héberger par vous même, vous pouvez donc totalement customiser : 
+- [le texte affiché](/src/translations/fr.yml)
+- [l'url](https://github.com/noelmace/widget-engreve/blob/master/src/index.js#L12) vers laquelle l'utilisateur est redirigé en cliquant sur le bouton en mode pleine page
+- [l'url](https://github.com/noelmace/widget-engreve/blob/master/src/index.js#L7) vers laquelle l'utilisateur est redirigé en cliquant sur le bouton en mode minimal/footer
+- et tout ce qui vous plaira...
+
+N'hésitez surtout pas à forker ce projet et ouvrir une Pull Request si vous pensez avoir apporté une modification qui pourrait être utilise à tous. Plus de détails sont disponibles dans [CONTRIBUTING.md](/CONTRIBUTING.md).
 
 ## Credits
 
