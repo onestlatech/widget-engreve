@@ -14,7 +14,7 @@
     }
   </style>
   <script>
-    var iframeDir = window.location.origin;
+    var iframeDir = document.URL.substr(0,document.URL.lastIndexOf('/'));
     var minMode = window.location.toString().indexOf('minMode') !== -1;
     var showCloseButton = window.location.toString().indexOf('showCloseButton') !== -1;
 
