@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0-rc.2](https://github.com/noelmace/widget-engreve/compare/v2.0.0-rc.1...v2.0.0-rc.2) (2019-12-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* l'option iframeHost est renommée iframeDir
+
+### Features
+
+* permettre d'héberger le contenu dans un sous-dossier ([ad90002](https://github.com/noelmace/widget-engreve/commit/ad90002ac6063eaaf4f62fa5b70f026f786b30cf))
+
+
+### Bug Fixes
+
+* minMode ([cc0bb32](https://github.com/noelmace/widget-engreve/commit/cc0bb32b6999d6a7e642c54545287ba9715e6fb5))
+
 ## 2.0.0-rc.1 (2019-12-19)
 
 
