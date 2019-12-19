@@ -5,6 +5,8 @@
 > :uk: This project is a derivative of [fightforthefuture/digital-climate-strike](https://github.com/fightforthefuture/digital-climate-strike) by Fight for the Future under the MIT License (which was itself inspired by the [Fight for the Future Red Alert widget](https://github.com/fightforthefuture/redalert-widget)).
 > Yet, there isn't any affiliation between this movements and the one this fork currently support.
 
+Compatible Firefox, Chrome (desktop et mobile), Safari (desktop et mobile), Microsoft Edge, et Internet Explorer 11.
+
 ## Comment installer ce widget
 
 ### Option 1: **:construction: non disponible pour l'instant :construction:**
@@ -39,50 +41,114 @@ En cas de problème ou question, n'hésitez pas à [soumettre une issue](https:/
 
 ## Comment ça marche
 
-> :warning: Pour l'instant, les seules démos disponiblent sont celles de digitalclimatestriker, le projet depuis lequel celui-ci a été créé. Le message affiché sur votre site ne sera bien entendu pas le même.
+Quand vous ajoutez [**widget.js**](https://github.com/noelmace/widget-engreve/blob/master/static/widget.js) à votre site, celui-ci montrera par défaut une bannière recouvrant l'ensemble de votre page, informant vos visiteurs que votre site rejoint le mouvement de grève contre les retraites et son monde, et les invite à rejoindre le monde.
 
-Quand vous ajoutez [**widget.js**](https://github.com/noelmace/widget-engreve/blob/master/static/widget.js) à votre site, celui-ci montrera une bannière ([demo](https://assets.digitalclimatestrike.net/demo.html)) informant vos visiteurs que votre site soutiens le monvement de grève contre les retraites et son monde, et les invite à rejoindre le monde.
+![look par défaut](/doc/capture-defaut.png)
 
-<!-- ![A screenshot of the Digital Climate Strike footer widget]() -->
+Ce widget est également entièrement customisable afin de vous permettre d'adapter son comportement à vos contraintes.
 
-Puis, le jour de mobilisation (:warning: à configurer) cette bannière s'étendra pour recouvrir l'ensemble de la page ([demo :warning: de digitalclimatestriker](https://assets.digitalclimatestrike.net/demo.html?fullPage)), bloquant l'accès à votre site.
-
-<!-- ![A screenshot of the Digital Climate Strike full page widget]() -->
-
-Si vous ne pouvez vous permettre de bloquer l'accès à votre site, il est également possible de configurer le widget afin de permettre à l'utilisateur de le fermer une fois le message affiché ([demo :warning: de digitalclimatestriker](https://assets.digitalclimatestrike.net/demo.html?minMode&showCloseButton)).
-
-<!-- ![A screenshot of the Digital Climate Strike full page widget with close button]() -->
-
-<!--
-You can demo the widget in different languages by adding a 'language' parameter to the URL. ([Example](https://assets.digitalclimatestrike.net/demo.html?fullPage&language=de)) 
-
-The widget is designed to appear once per user, per device, per day, but can be configured to display at a different interval. If you'd like to force it to show up on your page for testing, reload the page with `#ALWAYS_SHOW_DIGITAL_STRIKE` at the end of the URL.
--->
-
-> Please take a look at [**widget.js**](https://github.com/noelmace/widget-engreve/blob/master/static/widget.js) if you want to see exactly what you're embedding on your page.
-
-The widget is compatible with Firefox, Chrome (desktop and mobile), Safari (desktop and mobile), Microsoft Edge, and Internet Explorer 11.
 
 ## Customisation
 
-Définir un objet `DIGITAL_STRIKE_OPTIONS` avant d'inclure ce widget à votre site vous permet d'en customiser le comportement.
+Définir un objet `DIGITAL_STRIKE_OPTIONS` **avant** d'inclure ce widget à votre site vous permet d'en customiser le comportement.
 
-**🚧 traduction & adaptation en cours 🚧**
+Ci après les détails de chaque mode et options. Rdv au chapitre suivant pour une documentation plus résumée.
+
+### Non bloquant, pleine page
+
+Si vous ne pouvez vous permettre de bloquer l'accès à votre site, il est également possible de configurer le widget afin de permettre à l'utilisateur de le fermer une fois le message affiché.
+
+```html
+<script type="text/javascript">
+  var DIGITAL_STRIKE_OPTIONS = {
+    showCloseButtonOnFullPageWidget: true
+  };
+</script>
+```
+
+![](/doc/capture-closebtn.png)
+
+### Mode minimal
+
+Dans le pire des cas, si l'accès à votre site est un incontournable, vous pouvez également passer en mode "minimal" en mettant l'option `minMode` à `true`.
+
+```html
+<script type="text/javascript">
+  var DIGITAL_STRIKE_OPTIONS = {
+    minMode: true
+  };
+</script>
+```
+
+Cela affichera le widget de la manière suivante hors des jours de mobilisation.
+
+![](/doc/capture-minmode.png)
+
+#### Jours de mobilisation
+
+En mode minimal, l'affichage en pleine page se fait automatiquement les jours de mobilisation (tous les mardis par défaut).
+
+Pour définir vous même ces jours, vous pouvez passer la date de votre choix à l'option `fullPageDisplayStartDate`.
+
+Par exemple, pour le 17 décembre :
+
+```html
+<script type="text/javascript">
+  var DIGITAL_STRIKE_OPTIONS = {
+    fullPageDisplayStartDate: new Date(2020, 11, 17)
+  };
+</script>
+```
+
+Voir le [constructeur Date](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date) pour toutes les possibilités.
+
+#### Fermeture
+
+Dans ce mode, l'utilisateur peut fermer la banière en cliquant sur la croix. Un cookie est alors placé afin de ne pas lui afficher à nouveau avant le jour suivant.
+
+Vous pouvez supprimer ce comportement afin de toujours afficher le widget :
+```html
+<script type="text/javascript">
+  var DIGITAL_STRIKE_OPTIONS = {
+    alwaysShowWidget: true
+  };
+</script>
+```
+
+Vous pouvez également modifier cette durée si cela vous chante:
+
+```html
+<script type="text/javascript">
+  var DIGITAL_STRIKE_OPTIONS = {
+    cookieExpirationDays: 1, // @type {number}
+  };
+</script>
+```
+
+## Documentation complète
 
 ```html
 <script type="text/javascript">
   var DIGITAL_STRIKE_OPTIONS = {
     /**
-     * Specify view cookie expiration. After initial view, widget will not be
-     * displayed to a user again until after this cookie expires. Defaults to 
-     * one day.
+     * Hôte (url) à partir duquel charger le contenu du widget si vous l'hébergez par vous même.
      */
-    cookieExpirationDays: 1, // @type {number}
-    
+    iframehost: 'https://www.votreserveur.com',
+    /**
+     * Nom de votre site web à afficher à la place de "Ce site".
+     */
+    websiteName: 'Demo',
 
     /**
-     * Always show the widget, even when someone has closed the widget and set the cookie on their device. 
-     * Useful for testing. Defaults to false.
+     * Expiration du cookie. Après un premier affichage en mode minimal, le widget
+     * ne s'affichera qu'après expiration de ce cookie.
+     * 1 jour par défaut
+     */
+    cookieExpirationDays: 1, // @type {number}
+
+    /**
+     * Ignorer le cookie, et toujours afficher le widget. 
+     * false par défaut
      */
     alwaysShowWidget: false, // @type {boolean}
 
@@ -93,21 +159,19 @@ Définir un objet `DIGITAL_STRIKE_OPTIONS` avant d'inclure ce widget à votre si
     minMode: true, // @type {boolean}
     
     /**
-    * For the full page widget, shows a close button "x" and hides the message about the site being 
-    * available tomorrow. Defaults to false.
+    * En mode pleine page, afficher un bouton "x".
+    * false par défaut
     */
     showCloseButtonOnFullPageWidget: false, // @type {boolean}
     
     /**
-     * The date when the sticky footer widget should start showing on your web site.
-     * Note: the month is one integer less than the number of the month. E.g. 8 is September, not August.
+     * Date à partir de laquelle doit s'afficher le widget en mode footer
+     * ⚠️ Janvier = 0, Décembre = 11 (mois - 1)
      */
     footerDisplayStartDate: new Date(), //@ type {Date object}
     
     /**
-     * The date when the full page widget should showing on your web site for 24 hours. 
-     * Note: the month is one integer less than the number of the month. E.g. 8 is September, not August.
-     * Tous les mardi par défaut.
+     * En mode min, date à laquelle le footer doit s'afficher en pleine page, pour 24 heures. 
      */
     fullPageDisplayStartDate: new Date(2019, 8, 20), //@ type {Date object}
   };
