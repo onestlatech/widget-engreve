@@ -1,6 +1,8 @@
 # Le Widget En Grève
 
-:fist: Affichez votre support à la grève contre la réforme des retraites de Macron et son monde.
+:fist: Affichez votre support à la grève.
+
+> Créé en soutien au mouvement de grève contre la réforme des retraites de Macron et son monde, et l'appel [on**est**la.tech](https://onestla.tech). Applicable pour d'autres mouvements sociaux.
 
 Compatible Firefox, Chrome (desktop et mobile), Safari (desktop et mobile), Microsoft Edge, et Internet Explorer 11.
 
@@ -42,7 +44,7 @@ Allez voir la [documentation du mode "minimal"](#mode-minimal) pour plus de dét
 
 ## Comment ça marche
 
-Quand vous ajoutez [**widget.js**](https://github.com/noelmace/widget-engreve/blob/master/static/widget.js) à votre site, celui-ci montrera par défaut une bannière recouvrant l'ensemble de votre page ([demo](https://noelmace.github.io/widget-engreve/demo.html)), informant vos visiteurs que votre site rejoint le mouvement de grève contre la réforme des retraites et son monde, et les invite à rejoindre le mouvement.
+Quand vous ajoutez [**widget.js**](https://github.com/noelmace/widget-engreve/blob/master/static/widget.js) à votre site, celui-ci montrera par défaut une bannière recouvrant l'ensemble de votre page ([demo](https://noelmace.github.io/widget-engreve/demo.html)), informant vos visiteurs que votre site rejoint le mouvement de grève, et les invite à en faire de même.
 
 ![look par défaut](/doc/capture-defaut.png)
 
