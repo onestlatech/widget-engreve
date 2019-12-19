@@ -1,6 +1,6 @@
 # Le Widget En Grève
 
-:fist: Affichez votre support à la grève.
+:fist: Mettez votre site en grève !
 
 > Créé en soutien au mouvement de grève contre la réforme des retraites de Macron et son monde, et l'appel [on**est**la.tech](https://onestla.tech). Applicable pour d'autres mouvements sociaux.
 
