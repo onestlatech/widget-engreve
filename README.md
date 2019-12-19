@@ -2,14 +2,17 @@
 
 :fist: Affichez votre support à la grève contre la réforme des retraites de Macron et son monde.
 
-> :uk: This project is a derivative of [fightforthefuture/digital-climate-strike](https://github.com/fightforthefuture/digital-climate-strike) by Fight for the Future under the MIT License (which was itself inspired by the [Fight for the Future Red Alert widget](https://github.com/fightforthefuture/redalert-widget)).
-> Yet, there isn't any affiliation between this movements and the one this fork currently support.
-
 Compatible Firefox, Chrome (desktop et mobile), Safari (desktop et mobile), Microsoft Edge, et Internet Explorer 11.
+
+Vous pouvez customiser le comportement de ce widget via l'option `DIGITAL_STRIKE_OPTIONS` décrite ci-dessous.
+
+En cas de problème ou question, n'hésitez pas à [soumettre une issue](https://github.com/noelmace/widget-engreve/issues).
 
 ## Comment installer ce widget
 
-### Option 1: **:construction: non disponible pour l'instant :construction:**
+### CDN
+
+**:construction: non disponible pour l'instant :construction:**
 
    Ajoutez simplement cette ligne de code à votre page web:
 
@@ -17,27 +20,27 @@ Compatible Firefox, Chrome (desktop et mobile), Safari (desktop et mobile), Micr
 <script src="https://cdn.jsdelivr.net/gh/noelmace/widget-engreve@2.0.0/static/widget.js" async></script>
 ```
 
-### Option 2 (auto-hébergement):
+### A partir du dépôt
 
-  1. Clonez ce dépot :
-  
-    `git clone https://github.com/noelmace/widget-engreve.git`.
-  
-  2. Lancez la commande suivante depuis le dossier racine du projet, ce qui crééra un dossier `dist`:
-  
-    `npm install && npm run build`.
+Pré-requis :
+- [git](https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git)
+- [nodejs](https://nodejs.org/fr/)
 
-  3. Copiez les fichiers `index.html` et `widget.js` depuis le dossier `dist` vers le dossier de votre site.
+```bash
+# Clonez ce dépot
+$ git clone https://github.com/noelmace/widget-engreve.git
+# Lancez la commande suivante depuis le dossier racine du projet, ce qui crééra un dossier `dist`
+$ npm install && npm run build
+# Copiez les fichiers `index.html` et `widget.js` depuis le dossier `dist` vers le dossier de votre site.
+$ cp dist/index.html ../monsite/
+$ cp dist/widget.js ../monsite/
+```
 
-  4. Configurez l'option `iframeHost` comme indiqué dans la section suivante `DIGITAL_STRIKE_OPTIONS`.
-
-  5. Intégrez le widget à l'endroit de votre choix dans votre site via le code suivant:
+Vous devez ensuite :
+1. Configurez l'option `iframeHost` comme indiqué dans la section suivante `DIGITAL_STRIKE_OPTIONS`
+1. Intégrez le widget à l'endroit de votre choix dans votre site via le code suivant:
   
     `<script src="widget.js" async></script>`
-
-Vous pouvez customiser le comportement de ce widget via l'option `DIGITAL_STRIKE_OPTIONS` [décrite ci-dessous](#customization-options).
-
-En cas de problème ou question, n'hésitez pas à [soumettre une issue](https://github.com/noelmace/widget-engreve/issues).
 
 ## Comment ça marche
 
@@ -177,3 +180,9 @@ Vous pouvez également modifier cette durée si cela vous chante:
   };
 </script>
 ```
+
+## Credits
+
+This project is a derivative of [fightforthefuture/digital-climate-strike](https://github.com/fightforthefuture/digital-climate-strike) by Fight for the Future under the MIT License (which was itself inspired by the [Fight for the Future Red Alert widget](https://github.com/fightforthefuture/redalert-widget)).
+
+Yet, there isn't any affiliation between this movements and the one this fork currently support.
