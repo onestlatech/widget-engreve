@@ -56,7 +56,7 @@ Vous devez ensuite :
 
 ## Comment ça marche
 
-Quand vous ajoutez [**widget.js**](https://github.com/noelmace/widget-engreve/blob/master/static/widget.js) à votre site, celui-ci montrera par défaut une bannière recouvrant l'ensemble de votre page, informant vos visiteurs que votre site rejoint le mouvement de grève contre la réforme des retraites et son monde, et les invite à rejoindre le mouvement.
+Quand vous ajoutez [**widget.js**](https://github.com/noelmace/widget-engreve/blob/master/static/widget.js) à votre site, celui-ci montrera par défaut une bannière recouvrant l'ensemble de votre page ([demo](https://noelmace.github.io/widget-engreve/demo.html)), informant vos visiteurs que votre site rejoint le mouvement de grève contre la réforme des retraites et son monde, et les invite à rejoindre le mouvement.
 
 ![look par défaut](/doc/capture-defaut.png)
 
@@ -71,7 +71,7 @@ Ci après les détails de chaque mode et options. Rdv au chapitre suivant pour u
 
 ### Non bloquant, pleine page
 
-Si vous ne pouvez vous permettre de bloquer l'accès à votre site, il est également possible de configurer le widget afin de permettre à l'utilisateur de le fermer une fois le message affiché.
+Si vous ne pouvez vous permettre de bloquer l'accès à votre site, il est également possible de configurer le widget afin de permettre à l'utilisateur de le fermer une fois le message affiché ([demo](https://noelmace.github.io/widget-engreve/demo.html?showCloseButton=true)).
 
 ```html
 <script type="text/javascript">
@@ -95,7 +95,7 @@ Dans le pire des cas, si l'accès à votre site est un incontournable, vous pouv
 </script>
 ```
 
-Cela affichera le widget de la manière suivante hors des jours de mobilisation.
+Cela affichera le widget en mode "footer" hors des jours de mobilisation ([demo](https://noelmace.github.io/widget-engreve/demo.html?minMode=true)).
 
 ![](/doc/capture-minmode.png)
 
