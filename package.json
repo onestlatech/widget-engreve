@@ -1,12 +1,14 @@
 {
   "name": "widget-engreve",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-rc.1",
   "description": "Digital Strike widget so anyone can join the digital strike against the French pension reform and its world",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.js --host 0.0.0.0",
     "build": "webpack --config webpack.prod.js",
-    "lint": "./node_modules/.bin/eslint src/index.js"
+    "lint": "./node_modules/.bin/eslint src/index.js",
+    "release": "standard-version",
+    "postrelease": "git push --follow-tags"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
   },
   "homepage": "https://github.com/noelmace/widget-engreve.git#readme",
   "devDependencies": {
+    "standard-version": "^7.0.0",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "babel-loader": "^8.0.6",
