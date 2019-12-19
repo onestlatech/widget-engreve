@@ -8,7 +8,7 @@ full_page:
       <span class="dcs-website-name__website">site</span>
       <span class="dcs-website-name"></span>
       est en grève.'
-  ready:  'Notre appel ➔'
+  ready:  'Lire l&apos;appel ➔'
   footer: 'Vous serez en mesure d&apos;accéder à ce site le <time id="dcs-tomorrow-date" datetime=""></time>'
 footer:
   body: 'Notre site s&apos;oppose à la réforme des retraites et sera en grève le <time id="dcs-strike-date" datetime=""></time>. Et vous ?'
