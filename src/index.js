@@ -4,7 +4,7 @@ const MS_PER_DAY = 86400000
 
 const GLOBAL_STRIKE_URLS = {
   // en: '',
-  fr: 'https://onestla.tech/',
+  fr: 'https://reforme-retraite.info/',
 }
 
 const GLOBAL_STRIKE_FULL_PAGE_URLS = {

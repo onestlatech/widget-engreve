@@ -11,7 +11,7 @@ full_page:
   ready:  'Notre appel ➔'
   footer: 'Vous serez en mesure d&apos;accéder à ce site le <time id="dcs-tomorrow-date" datetime=""></time>'
 footer:
-  body: 'Notre site s&apos;oppose à la réforme des retraites et se mobilisera le <time id="dcs-strike-date" datetime=""></time>. Et vous ?'
+  body: 'Notre site s&apos;oppose à la réforme des retraites et sera en grève le <time id="dcs-strike-date" datetime=""></time>. Et vous ?'
   ready: 'J&apos;en suis. ➔'
 
 title: 'Grêve numérique  contre la réforme des retraites et son monde'
