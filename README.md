@@ -56,7 +56,7 @@ Vous devez ensuite :
 
 ## Comment ça marche
 
-Quand vous ajoutez [**widget.js**](https://github.com/noelmace/widget-engreve/blob/master/static/widget.js) à votre site, celui-ci montrera par défaut une bannière recouvrant l'ensemble de votre page, informant vos visiteurs que votre site rejoint le mouvement de grève contre les retraites et son monde, et les invite à rejoindre le monde.
+Quand vous ajoutez [**widget.js**](https://github.com/noelmace/widget-engreve/blob/master/static/widget.js) à votre site, celui-ci montrera par défaut une bannière recouvrant l'ensemble de votre page, informant vos visiteurs que votre site rejoint le mouvement de grève contre la réforme des retraites et son monde, et les invite à rejoindre le mouvement.
 
 ![look par défaut](/doc/capture-defaut.png)
 
