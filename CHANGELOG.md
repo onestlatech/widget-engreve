@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0-rc.3](https://github.com/noelmace/widget-engreve/compare/v2.0.0-rc.2...v2.0.0-rc.3) (2019-12-19)
+
+
+### Features
+
+* websiteName param sur demo ([6eac13c](https://github.com/noelmace/widget-engreve/commit/6eac13ca426def43ee735ba7490d5cb3fad0785c))
+
+
+### Bug Fixes
+
+* demo iframe URL ([d48dc39](https://github.com/noelmace/widget-engreve/commit/d48dc39c2c846e0a64ee359e510d947a0f022864))
+* url par défaut de l'iframe ([7e524fa](https://github.com/noelmace/widget-engreve/commit/7e524faae5e2eb446e21cf628e083677613ddbda))
+
 ## [2.0.0-rc.2](https://github.com/noelmace/widget-engreve/compare/v2.0.0-rc.1...v2.0.0-rc.2) (2019-12-19)
 
 
