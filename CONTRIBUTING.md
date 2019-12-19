@@ -32,7 +32,7 @@ $ npm run lint
 
 ## Automated Deploys
 
-TravisCI is set up to build the widget and upload it to Google Cloud Storage on every commit to the master branch.
+A Github action is set up to build the widget and upload it to Github Pages on every commit to the master branch.
 
 ## Development Docker container
 
