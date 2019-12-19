@@ -13,7 +13,7 @@
   const nextTuesday = new Date();
   nextTuesday.setDate(nextTuesday.getDate() + ((7-nextTuesday.getDay())%7+2) % 7);
   var fullPageDisplayStartDate = options.fullPageDisplayStartDate || nextTuesday;
-  var minMode = !(options.minMode === false);
+  var minMode = !!options.minMode;
   var cookieExpirationDays = parseFloat(options.cookieExpirationDays || 1);
   var alwaysShowWidget = !!(options.alwaysShowWidget || window.location.hash.indexOf('ALWAYS_SHOW_DIGITAL_STRIKE') !== -1);
   var disableGoogleAnalytics = !!options.disableGoogleAnalytics;
