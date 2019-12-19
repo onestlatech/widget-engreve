@@ -16,7 +16,7 @@ Ajoutez simplement cette ligne de code à votre page web:
 <script src="https://noelmace.github.io/widget-engreve/widget.js" async></script>
 ```
 
-:warning: compte tenu de certaines limitations de Github, il est possible que cette solution amène à de très rares moment à afficher un page d'erreur dans le widget. Si possible, nous vous encourageons à héberger vous même le contenu du widget (page index.html), comme indiqué ci-dessous.
+Si possible, nous vous encourageons tout de même à héberger vous même le widget et son contenu, en suivant la démarche ci-dessous.
 
 ### A partir du dépôt
 
