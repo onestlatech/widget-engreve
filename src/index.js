@@ -34,7 +34,7 @@ function maximize() {
 
 function showCloseButtonOnFullPageWidget() {
   const fullPageWidget = document.querySelector('.dcs-full-page')
-  fullPageWidget.style.background = 'rgba(78,229,139, 0.8)'
+  fullPageWidget.style.background = 'rgba(204,51,0, 0.9)'
 
   const fullPageCloseButton = document.querySelector('.dcs-full-page__close')
   fullPageCloseButton.style.display = 'flex'
