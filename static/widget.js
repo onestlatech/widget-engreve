@@ -7,7 +7,8 @@
 
   // user-configurable options
   var options = window.DIGITAL_STRIKE_OPTIONS || {};
-  var iframeDir = options.iframeDir !== undefined ? options.iframeDir : 'https://assets.digitalclimatestrike.net';
+  // FIXME: default iframeDir
+  var iframeDir = options.iframeDir !== undefined ? options.iframeDir : '';
   var websiteName = options.websiteName || null;
   var footerDisplayStartDate = options.footerDisplayStartDate || new Date(1990, 10, 10);
   const nextTuesday = new Date();
