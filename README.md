@@ -21,16 +21,24 @@ Pré-requis :
 $ git clone https://github.com/noelmace/widget-engreve.git
 # Lancez la commande suivante depuis le dossier racine du projet, ce qui crééra un dossier `dist`
 $ npm install && npm run build
-# Copiez les fichiers `index.html` et `widget.js` depuis le dossier `dist` vers le dossier de votre site.
-$ cp dist/index.html ../monsite/
-$ cp dist/widget.js ../monsite/
+# Copiez le dossier `dist` vers l'emplacement de votre choix dans votre projet
+$ cp -r ./dist ../monsite/assets/engreve
 ```
 
 Vous devez ensuite :
-1. Configurez l'option `iframeHost` comme indiqué dans la section suivante `DIGITAL_STRIKE_OPTIONS`
-1. Intégrez le widget à l'endroit de votre choix dans votre site via le code suivant:
-  
-    `<script src="widget.js" async></script>`
+1. Donner l'URL **complète** vers le dossier `dist` via l'option iframeDir, comme indiqué dans la section suivante `DIGITAL_STRIKE_OPTIONS` et ci-dessous
+1. (optionnel) donner le nom de site à afficher, via l'option `websiteName`
+1. Intégrez `widget.js` à votre page
+
+```html
+<script>
+  var DIGITAL_STRIKE_OPTIONS = {
+    iframeDir: 'http://www.votresite.com/assets/engreve',
+    websiteName: 'Wof Show'
+  }
+</script>
+<script src="assets/engreve/widget.js" async></script>
+```
 
 ### CDN
 
@@ -138,9 +146,9 @@ Vous pouvez également modifier cette durée si cela vous chante:
 <script type="text/javascript">
   var DIGITAL_STRIKE_OPTIONS = {
     /**
-     * Hôte (url) à partir duquel charger le contenu du widget si vous l'hébergez par vous même.
+     * URL complète où est hébergé le contenu du widget à afficher (dossier dist)
      */
-    iframehost: 'https://www.votreserveur.com',
+    iframeDir: 'https://www.votreserveur.com/assets/engreve',
     /**
      * Nom de votre site web à afficher à la place de "Ce site".
      */

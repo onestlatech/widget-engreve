@@ -7,7 +7,7 @@
 
   // user-configurable options
   var options = window.DIGITAL_STRIKE_OPTIONS || {};
-  var iframeHost = options.iframeHost !== undefined ? options.iframeHost : 'https://assets.digitalclimatestrike.net';
+  var iframeDir = options.iframeDir !== undefined ? options.iframeDir : 'https://assets.digitalclimatestrike.net';
   var websiteName = options.websiteName || null;
   var footerDisplayStartDate = options.footerDisplayStartDate || new Date(1990, 10, 10);
   const nextTuesday = new Date();
@@ -21,7 +21,7 @@
   var language = getLanguage();
 
   function getIframeSrc() {
-    var src = iframeHost;
+    var src = iframeDir;
     src += language === 'fr' ? '/index.html?' : '/index-' + language + '.html?';
 
     var urlParams = [
@@ -118,7 +118,6 @@
 
   function receiveMessage(event) {
     if (!event.data.DIGITAL_STRIKE) return;
-    if (event.origin.lastIndexOf(iframeHost, 0) !== 0) return;
 
     switch (event.data.action) {
       case 'maximize':
