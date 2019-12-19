@@ -10,16 +10,6 @@ En cas de problème ou question, n'hésitez pas à [soumettre une issue](https:/
 
 ## Comment installer ce widget
 
-### CDN
-
-**:construction: non disponible pour l'instant :construction:**
-
-   Ajoutez simplement cette ligne de code à votre page web:
-
-```html
-<script src="https://cdn.jsdelivr.net/gh/noelmace/widget-engreve@2.0.0/static/widget.js" async></script>
-```
-
 ### A partir du dépôt
 
 Pré-requis :
@@ -41,6 +31,20 @@ Vous devez ensuite :
 1. Intégrez le widget à l'endroit de votre choix dans votre site via le code suivant:
   
     `<script src="widget.js" async></script>`
+
+### CDN
+
+**:construction: non disponible pour l'instant :construction:**
+
+   Ajoutez simplement cette ligne de code à votre page web:
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/noelmace/widget-engreve@2.0.0/static/widget.js" async></script>
+```
+
+### NPM
+
+`npm i -d widget-engreve`
 
 ## Comment ça marche
 
