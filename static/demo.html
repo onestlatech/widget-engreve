@@ -14,7 +14,7 @@
     }
   </style>
   <script>
-    var iframeHost = window.location.origin;
+    var iframeDir = window.location.origin;
     var minMode = window.location.toString().indexOf('minMode') !== -1;
     var showCloseButton = window.location.toString().indexOf('showCloseButton') !== -1;
 
@@ -22,7 +22,7 @@
     var language = urlParams.get('language') ? urlParams.get('language') : 'fr';
 
     var DIGITAL_STRIKE_OPTIONS = {
-      iframeHost: iframeHost,
+      iframeDir: iframeDir,
       minMode: minMode,
       showCloseButtonOnFullPageWidget: showCloseButton,
       alwaysShowWidget: true,
