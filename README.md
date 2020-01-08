@@ -1,10 +1,10 @@
-# EnGreve - le Widget
+# Le Widget En Grève
 
 :fist: Affichez votre support à la grève contre la réforme des retraites de Macron et son monde.
 
 Compatible Firefox, Chrome (desktop et mobile), Safari (desktop et mobile), Microsoft Edge, et Internet Explorer 11.
 
-Vous pouvez customiser le comportement de ce widget via l'option `DIGITAL_STRIKE_OPTIONS` décrite ci-dessous.
+Vous pouvez customiser le comportement de ce widget via l'option [`DIGITAL_STRIKE_OPTIONS`](#Customisation).
 
 En cas de problème ou question, n'hésitez pas à [soumettre une issue](https://github.com/noelmace/widget-engreve/issues).
 
@@ -16,41 +16,29 @@ Ajoutez simplement cette ligne de code à votre page web:
 <script src="https://noelmace.github.io/widget-engreve/widget.js" async></script>
 ```
 
-Si possible, nous vous encourageons tout de même à héberger vous même le widget et son contenu, en suivant la démarche ci-dessous.
+## Mobilisation au jour le jour
 
-### A partir du dépôt
-
-Pré-requis :
-- [git](https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git)
-- [nodejs](https://nodejs.org/fr/)
-
-```bash
-# Clonez ce dépot
-$ git clone https://github.com/noelmace/widget-engreve.git
-# Lancez la commande suivante depuis le dossier racine du projet, ce qui crééra un dossier `dist`
-$ npm install && npm run build
-# Copiez le dossier `dist` vers l'emplacement de votre choix dans votre projet
-$ cp -r ./dist ../monsite/assets/engreve
-```
-
-Vous devez ensuite :
-1. Donner l'URL **complète** vers le dossier `dist` via l'option `iframeDir`, comme indiqué dans la section suivante `DIGITAL_STRIKE_OPTIONS` et ci-dessous
-1. (optionnel) donner le nom de site à afficher, via l'option `websiteName`
-1. Intégrez `widget.js` à votre page
+Vous ne pouvez mettre votre site en grève illimitée, mais souhaitez soutenir le mouvement les jours de mobilisation nationale ? Ajoutez simplement le code suivant :
 
 ```html
 <script>
   var DIGITAL_STRIKE_OPTIONS = {
-    iframeDir: 'http://www.votresite.com/assets/engreve',
-    websiteName: 'Wof Show'
-  }
+    // définir le jour de mobilisation
+    // attention: les mois commencent à zéro (=janvier)
+    fullPageDisplayStartDate: new Date(2020, 0, 9),
+    // afficher un simple footer en dehors du jour de mobilisation
+    minMode: true,
+    // permettre d'accéder au site le jour de mobilisation (optionnel)
+    showCloseButtonOnFullPageWidget: true
+  };
 </script>
-<script src="assets/engreve/widget.js" async></script>
+<script
+  src="https://noelmace.github.io/widget-engreve/widget.js"
+  async
+></script>
 ```
 
-### NPM
-
-`npm i -d widget-engreve`
+Allez voir la [documentation du mode "minimal"](#mode-minimal) pour plus de détails.
 
 ## Comment ça marche
 
@@ -66,7 +54,7 @@ Définir un objet `DIGITAL_STRIKE_OPTIONS` **avant** d'inclure ce widget à votr
 
 Ci après les détails de chaque mode et options. Rdv au chapitre suivant pour une documentation plus résumée.
 
-### Non bloquant, pleine page
+### permettre l'accès à votre site
 
 Si vous ne pouvez vous permettre de bloquer l'accès à votre site, il est également possible de configurer le widget afin de permettre à l'utilisateur de le fermer une fois le message affiché ([demo](https://noelmace.github.io/widget-engreve/demo.html?showCloseButton=true)).
 
@@ -114,9 +102,12 @@ Par exemple, pour le 17 décembre :
 
 Voir le [constructeur Date](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date) pour toutes les possibilités.
 
+**:warning: Le widget ne s'affichera plus une fois la date "fullPageDisplayStartDate" dépassée ! Pensez donc à définir le jour suivant de mobilisation nationale dés le lendemain !**
+
+
 #### Fermeture
 
-Dans ce mode, l'utilisateur peut fermer la banière en cliquant sur la croix. Un cookie est alors placé afin de ne pas lui afficher à nouveau avant le jour suivant.
+En mode minimal, l'utilisateur peut fermer la banière en cliquant sur la croix. Un cookie est alors placé afin de ne pas lui afficher à nouveau avant le jour suivant.
 
 Vous pouvez supprimer ce comportement afin de toujours afficher le widget :
 ```html
@@ -190,9 +181,43 @@ Vous pouvez également modifier cette durée si cela vous chante:
 </script>
 ```
 
-## Customisation avancée et contributions
+## Auto-hébergement
 
-## Fonctionnement
+Pré-requis :
+- [git](https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git)
+- [nodejs](https://nodejs.org/fr/)
+
+```bash
+# Clonez ce dépot
+$ git clone https://github.com/noelmace/widget-engreve.git
+# Lancez la commande suivante depuis le dossier racine du projet, ce qui crééra un dossier `dist`
+$ npm install && npm run build
+# Copiez le dossier `dist` vers l'emplacement de votre choix dans votre projet
+$ cp -r ./dist ../monsite/assets/engreve
+```
+
+Vous devez ensuite :
+1. Donner l'URL **complète** vers le dossier `dist` via l'option `iframeDir`, comme indiqué dans la section suivante `DIGITAL_STRIKE_OPTIONS` et ci-dessous
+1. (optionnel) donner le nom de site à afficher, via l'option `websiteName`
+1. Intégrez `widget.js` à votre page
+
+```html
+<script>
+  var DIGITAL_STRIKE_OPTIONS = {
+    iframeDir: 'http://www.votresite.com/assets/engreve',
+    websiteName: 'Wof Show'
+  }
+</script>
+<script src="assets/engreve/widget.js" async></script>
+```
+
+### NPM
+
+Ce projet est également disponible via le package npm [widget-engreve](https://www.npmjs.com/package/widget-engreve) :
+
+`npm i -d widget-engreve`
+
+## Customisation avancée et contributions
 
 Le fichier [`widget.js`](/static/widget.js) créé une iframe, et envoie les options de customisation à celle-ci.
 
@@ -206,7 +231,7 @@ En choisissant de builder ce widget et de l'héberger par vous même, vous pouve
 - [l'url](https://github.com/noelmace/widget-engreve/blob/master/src/index.js#L7) vers laquelle l'utilisateur est redirigé en cliquant sur le bouton en mode minimal/footer
 - et tout ce qui vous plaira...
 
-N'hésitez surtout pas à forker ce projet et ouvrir une Pull Request si vous pensez avoir apporté une modification qui pourrait être utilise à tous. Plus de détails sont disponibles dans [CONTRIBUTING.md](/CONTRIBUTING.md).
+N'hésitez surtout pas à forker ce projet et ouvrir une Pull Request si vous pensez avoir apporté une modification qui pourrait être utile à tous. Plus de détails sont disponibles dans [CONTRIBUTING.md](/CONTRIBUTING.md).
 
 ## Credits
 
