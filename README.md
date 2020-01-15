@@ -8,14 +8,14 @@ Compatible Firefox, Chrome (desktop et mobile), Safari (desktop et mobile), Micr
 
 Vous pouvez customiser le comportement de ce widget via l'option [`DIGITAL_STRIKE_OPTIONS`](#Customisation).
 
-En cas de problème ou question, n'hésitez pas à [soumettre une issue](https://github.com/noelmace/widget-engreve/issues).
+En cas de problème ou question, n'hésitez pas à [soumettre une issue](https://github.com/onestlatech/widget-engreve/issues).
 
 ## Comment installer ce widget
 
 Ajoutez simplement cette ligne de code à votre page web:
 
 ```html
-<script src="https://noelmace.github.io/widget-engreve/widget.js" async></script>
+<script src="https://onestla.tech/widget-engreve/widget.js" async></script>
 ```
 
 ## Mobilisation au jour le jour
@@ -35,7 +35,7 @@ Vous ne pouvez mettre votre site en grève illimitée, mais souhaitez soutenir l
   };
 </script>
 <script
-  src="https://noelmace.github.io/widget-engreve/widget.js"
+  src="https://onestla.tech/widget-engreve/widget.js"
   async
 ></script>
 ```
@@ -44,7 +44,7 @@ Allez voir la [documentation du mode "minimal"](#mode-minimal) pour plus de dét
 
 ## Comment ça marche
 
-Quand vous ajoutez [**widget.js**](https://github.com/noelmace/widget-engreve/blob/master/static/widget.js) à votre site, celui-ci montrera par défaut une bannière recouvrant l'ensemble de votre page ([demo](https://noelmace.github.io/widget-engreve/demo.html)), informant vos visiteurs que votre site rejoint le mouvement de grève, et les invite à en faire de même.
+Quand vous ajoutez [**widget.js**](https://github.com/onestlatech/widget-engreve/blob/master/static/widget.js) à votre site, celui-ci montrera par défaut une bannière recouvrant l'ensemble de votre page ([demo](https://onestla.tech/widget-engreve/demo.html)), informant vos visiteurs que votre site rejoint le mouvement de grève, et les invite à en faire de même.
 
 ![look par défaut](/doc/capture-defaut.png)
 
@@ -58,7 +58,7 @@ Ci après les détails de chaque mode et options. Rdv au chapitre suivant pour u
 
 ### permettre l'accès à votre site
 
-Si vous ne pouvez vous permettre de bloquer l'accès à votre site, il est également possible de configurer le widget afin de permettre à l'utilisateur de le fermer une fois le message affiché ([demo](https://noelmace.github.io/widget-engreve/demo.html?showCloseButton=true)).
+Si vous ne pouvez vous permettre de bloquer l'accès à votre site, il est également possible de configurer le widget afin de permettre à l'utilisateur de le fermer une fois le message affiché ([demo](https://onestla.tech/widget-engreve/demo.html?showCloseButton=true)).
 
 ```html
 <script type="text/javascript">
@@ -82,7 +82,7 @@ Dans le pire des cas, si l'accès à votre site est un incontournable, vous pouv
 </script>
 ```
 
-Cela affichera le widget en mode "footer" hors des jours de mobilisation ([demo](https://noelmace.github.io/widget-engreve/demo.html?minMode=true)).
+Cela affichera le widget en mode "footer" hors des jours de mobilisation ([demo](https://onestla.tech/widget-engreve/demo.html?minMode=true)).
 
 ![](/doc/capture-minmode.png)
 
@@ -191,7 +191,7 @@ Pré-requis :
 
 ```bash
 # Clonez ce dépot
-$ git clone https://github.com/noelmace/widget-engreve.git
+$ git clone https://github.com/onestlatech/widget-engreve.git
 # Lancez la commande suivante depuis le dossier racine du projet, ce qui crééra un dossier `dist`
 $ npm install && npm run build
 # Copiez le dossier `dist` vers l'emplacement de votre choix dans votre projet
@@ -229,8 +229,8 @@ Cette iframe charge le contenu du widget à partir:
 
 En choisissant de builder ce widget et de l'héberger par vous même, vous pouvez donc totalement customiser : 
 - [le texte affiché](/src/translations/fr.yml)
-- [l'url](https://github.com/noelmace/widget-engreve/blob/master/src/index.js#L12) vers laquelle l'utilisateur est redirigé en cliquant sur le bouton en mode pleine page
-- [l'url](https://github.com/noelmace/widget-engreve/blob/master/src/index.js#L7) vers laquelle l'utilisateur est redirigé en cliquant sur le bouton en mode minimal/footer
+- [l'url](https://github.com/onestlatech/widget-engreve/blob/master/src/index.js#L12) vers laquelle l'utilisateur est redirigé en cliquant sur le bouton en mode pleine page
+- [l'url](https://github.com/onestlatech/widget-engreve/blob/master/src/index.js#L7) vers laquelle l'utilisateur est redirigé en cliquant sur le bouton en mode minimal/footer
 - et tout ce qui vous plaira...
 
 N'hésitez surtout pas à forker ce projet et ouvrir une Pull Request si vous pensez avoir apporté une modification qui pourrait être utile à tous. Plus de détails sont disponibles dans [CONTRIBUTING.md](/CONTRIBUTING.md).
