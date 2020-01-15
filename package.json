@@ -13,16 +13,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/noelmace/widget-engreve.git"
+    "url": "git+https://github.com/onestlatech/widget-engreve.git"
   },
   "author": "Noël Macé",
   "contributors": [
     "Global Climate Strike (no affiliation)"
   ],
   "bugs": {
-    "url": "https://github.com/noelmace/widget-engreve.git/issues"
+    "url": "https://github.com/onestlatech/widget-engreve.git/issues"
   },
-  "homepage": "https://github.com/noelmace/widget-engreve.git#readme",
+  "homepage": "https://github.com/onestlatech/widget-engreve.git#readme",
   "devDependencies": {
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
