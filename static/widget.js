@@ -8,7 +8,7 @@
   // user-configurable options
   var options = window.DIGITAL_STRIKE_OPTIONS || {};
   // FIXME: default iframeDir
-  var iframeDir = options.iframeDir !== undefined ? options.iframeDir : 'https://noelmace.github.io/widget-engreve';
+  var iframeDir = options.iframeDir !== undefined ? options.iframeDir : 'https://onestla.tech/widget-engreve/';
   var websiteName = options.websiteName || null;
   var footerDisplayStartDate = options.footerDisplayStartDate || new Date(1990, 10, 10);
   const nextTuesday = new Date();
@@ -57,13 +57,27 @@
   }
 
   function getLanguage() {
-    var language = 'fr';
+    // Overriden value
+    if (options.language) {
+      return options.language;
+    }
 
-    // if (options.language === 'en' || (!options.language && navigator && navigator.language.match(/^tr/))) {
-    //   language = 'en';
-    // }
+    var languages = [
+      'fr',
+      'en',
+    ];
 
-    return language;
+    for (var i=0,l=languages.length;i<l;i++) {
+      var language = languages[i];
+      var languageRegexp = new RegExp('^'+language, 'i');
+
+      if (navigator && languageRegexp.match(navigator.language)) {
+        return language;
+      }
+    }
+
+    // Default
+    return 'fr';
   }
 
   function maximize() {

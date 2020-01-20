@@ -1,0 +1,20 @@
+full_page:
+  body: '
+      Against the destruction of our social model.<br />
+      Against the constant growth of inequality.<br />
+      Against the systematic stigmatization of minorities.<br />
+      <span class="dcs-website-name__default">This</span>
+      <span class="dcs-website-name__prefix">The</span>
+      <span class="dcs-website-name__website">website</span>
+      <span class="dcs-website-name"></span>
+      is on strike.'
+  ready:  'Read the call ➔'
+  footer: 'You will be able to access this website on <time id="dcs-tomorrow-date" datetime=""></time>'
+footer:
+  body: 'Our website is against the pensions reform and will be on strike on <time id="dcs-strike-date" datetime=""></time>. And you?'
+  ready: 'I&apos;m in. ➔'
+
+title: 'Digital strike against the pensions reform and its camp'
+logo_alt: 'Logo Digital Climate Strike'
+close_overlay: 'Close superposition'
+close_banner: 'Close banner'

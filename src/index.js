@@ -3,17 +3,17 @@ import './main.css'
 const MS_PER_DAY = 86400000
 
 const GLOBAL_STRIKE_URLS = {
-  // en: '',
+  en: 'https://reforme-retraite.info/',
   fr: 'https://reforme-retraite.info/',
 }
 
 const GLOBAL_STRIKE_FULL_PAGE_URLS = {
-  // en: '',
+  en: 'https://onestla.tech/',
   fr: 'https://onestla.tech/',
 }
 
 const LOCALE_CODE_MAPPING = {
-  // en: 'en-EN',
+  en: 'en-US',
   fr: 'fr-FR',
 }
 
@@ -144,7 +144,7 @@ function initializeInterface() {
   }
 
   if (!query.minMode) {
-    const fullPageFooter = document.querySelector('.dcs-full-page__footer');
+    const fullPageFooter = document.querySelector('.dcs-full-page__footer')
     fullPageFooter.style.display = 'none'
   }
 
