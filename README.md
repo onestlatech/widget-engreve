@@ -136,6 +136,12 @@ Vous pouvez également modifier cette durée si cela vous chante:
 <script type="text/javascript">
   var DIGITAL_STRIKE_OPTIONS = {
     /**
+     * Langue dans laquelle vous souhaitez afficher la bannière.
+     * Valeurs disponibles : fr, en
+     */
+    language: 'fr',
+
+    /**
      * URL complète où est hébergé le contenu du widget à afficher (dossier dist)
      */
     iframeDir: 'https://www.votreserveur.com/assets/engreve',
