@@ -8,10 +8,10 @@ full_page:
       <span class="dcs-website-name__website">website</span>
       <span class="dcs-website-name"></span>
       is on strike.'
-  ready:  'Read the call ➔'
+  ready:  'Read the manifesto ➔'
   footer: 'You will be able to access this website on <time id="dcs-tomorrow-date" datetime=""></time>'
 footer:
-  body: 'Our website is against the pensions reform and will be on strike on <time id="dcs-strike-date" datetime=""></time>. And you?'
+  body: 'Our website is against the French pensions reform and will be on strike on <time id="dcs-strike-date" datetime=""></time>. And you?'
   ready: 'I&apos;m in. ➔'
 
 title: 'Digital strike against the pensions reform and its camp'
