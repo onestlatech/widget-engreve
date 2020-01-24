@@ -71,7 +71,7 @@
       var language = languages[i];
       var languageRegexp = new RegExp('^'+language, 'i');
 
-      if (navigator && languageRegexp.match(navigator.language)) {
+      if (navigator && languageRegexp.test(navigator.language)) {
         return language;
       }
     }
