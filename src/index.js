@@ -3,8 +3,8 @@ import './main.css'
 const MS_PER_DAY = 86400000
 
 const GLOBAL_STRIKE_URLS = {
-  en: 'https://reforme-retraite.info/',
-  fr: 'https://reforme-retraite.info/',
+  en: 'https://onestla.tech/',
+  fr: 'https://onestla.tech/',
 }
 
 const GLOBAL_STRIKE_FULL_PAGE_URLS = {
