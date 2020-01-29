@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/onestlatech/widget-engreve/compare/v2.0.1...v2.1.0) (2020-01-29)
+
+### Bug Fixes
+
+* language detection fails ([b29463f](https://github.com/onestlatech/widget-engreve/commit/b29463fb32689c611d6d26734cf881ea6bd2153c))
+* use the same url in min mode ([55680d8](https://github.com/onestlatech/widget-engreve/commit/55680d8d98a7b970fcbab9fd1ba67187d417e174)), closes [#8](https://github.com/onestlatech/widget-engreve/issues/8)
+
+### Features
+
+* Translate the widget ([4e3f4b1](https://github.com/onestlatech/widget-engreve/commit/4e3f4b14a480445be93fae3a9b627275c290b68a)), PR [#2](https://github.com/onestlatech/widget-engreve/pull/2)
+
 ### [2.0.1](https://github.com/onestlatech/widget-engreve/compare/v2.0.0...v2.0.1) (2020-01-16)
 
 New release for npm only.
@@ -82,4 +93,3 @@ inverse son sens
 ## 2.0.0-alpha.1 (2019-12-18)
 
 Fork from https://github.com/fightforthefuture/digital-climate-strike/commit/e99816
-
