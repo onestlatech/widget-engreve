@@ -70,6 +70,8 @@ Si vous ne pouvez vous permettre de bloquer l'accès à votre site, il est égal
 
 ![](/doc/capture-closebtn.png)
 
+> Dans ce cas, il pourra être préférable d'ouvrir la page d'information dans un nouvel onglet au click. Pour ce faire, utilisez l'option `popup: true`.
+
 ### Mode minimal
 
 Dans le pire des cas, si l'accès à votre site est un incontournable, vous pouvez également passer en mode "minimal" en mettant l'option `minMode` à `true`.
@@ -168,6 +170,13 @@ Vous pouvez également modifier cette durée si cela vous chante:
      * false par défault: affichage en mode "full page" tous les jours
      */
     minMode: true, // @type {boolean}
+
+     /**
+     * Ouvrir la page d'information dans un nouvel onglet au click sur le bouton
+     * false par défault: l'utilisateur sera directement redirigé vers la page d'information
+     * après avoir clické sur le bouton
+     */
+    popup: true, // @type {boolean}
     
     /**
     * En mode pleine page, afficher un bouton "x".
