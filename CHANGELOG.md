@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/onestlatech/widget-engreve/compare/v2.1.0...v2.2.0) (2020-09-01)
+
+
+### Features
+
+* custom strike url ([6faf2bb](https://github.com/onestlatech/widget-engreve/commit/6faf2bbc7661763b59cc35241052cac60a839ecb)), closes [#7](https://github.com/onestlatech/widget-engreve/issues/7)
+* open in a new window ([b908c5e](https://github.com/onestlatech/widget-engreve/commit/b908c5e98f5c767a3ce08ae18358272c976860a3)), closes [#9](https://github.com/onestlatech/widget-engreve/issues/9)
+
 ## [2.1.0](https://github.com/onestlatech/widget-engreve/compare/v2.0.1...v2.1.0) (2020-01-29)
 
 ### Bug Fixes

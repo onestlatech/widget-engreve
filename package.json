@@ -1,6 +1,6 @@
 {
   "name": "widget-engreve",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Digital Strike widget so anyone can join the digital strike against the French pension reform and its world",
   "main": "index.js",
   "scripts": {
