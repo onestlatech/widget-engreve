@@ -127,8 +127,15 @@ function initializeInterface() {
   const fullPageDisplayStopDate = new Date(fullPageDisplayStartDate.getTime() + MS_PER_DAY)
   const isFullPage = !query.minMode || todayIs(fullPageDisplayStartDate)
   const stayInWindow = query.popup !== 'true'
+  const customStrikeURLs = {}
+  if (query.customStrikeEnURL) {
+    customStrikeURLs.en = query.customStrikeEnURL
+  }
+  if (query.customStrikeFrURL) {
+    customStrikeURLs.fr = query.customStrikeFrURL
+  }
 
-  joinUrls = isFullPage ? GLOBAL_STRIKE_FULL_PAGE_URLS : GLOBAL_STRIKE_URLS
+  joinUrls = {...(isFullPage ? GLOBAL_STRIKE_FULL_PAGE_URLS : GLOBAL_STRIKE_URLS), ...customStrikeURLs}
 
   setGlobalStrikeLinkUrl('.dcs-footer .dcs-button', stayInWindow)
   setGlobalStrikeLinkUrl('.dcs-footer__logo', stayInWindow)

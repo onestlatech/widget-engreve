@@ -21,6 +21,8 @@
   var disableGoogleAnalytics = !!options.disableGoogleAnalytics;
   var showCloseButtonOnFullPageWidget = !!options.showCloseButtonOnFullPageWidget;
   var popup = options.popup;
+  var customStrikeEnURL = options.customStrikeEnURL;
+  var customStrikeFrURL = options.customStrikeFrURL;
   var language = getLanguage();
 
   function getIframeSrc() {
@@ -38,6 +40,8 @@
     disableGoogleAnalytics && urlParams.push(['googleAnalytics', 'false']);
     websiteName && urlParams.push(['websiteName', encodeURI(websiteName)]);
     popup && urlParams.push(['popup', 'true']);
+    customStrikeEnURL && urlParams.push(['customStrikeEnURL', customStrikeEnURL]);
+    customStrikeFrURL && urlParams.push(['customStrikeFrURL', customStrikeFrURL]);
 
     var params = urlParams.map(function(el) {
       return el.join('=');
