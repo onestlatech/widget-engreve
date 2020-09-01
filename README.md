@@ -177,23 +177,30 @@ Vous pouvez également modifier cette durée si cela vous chante:
      * après avoir clické sur le bouton
      */
     popup: true, // @type {boolean}
-    
+
     /**
     * En mode pleine page, afficher un bouton "x".
     * false par défaut
     */
     showCloseButtonOnFullPageWidget: false, // @type {boolean}
-    
+
     /**
      * Date à partir de laquelle doit s'afficher le widget en mode footer
      * ⚠️ Janvier = 0, Décembre = 11 (mois - 1)
      */
     footerDisplayStartDate: new Date(), //@ type {Date object}
-    
+
     /**
      * En mode min, date à laquelle le footer doit s'afficher en pleine page, pour 24 heures. 
      */
     fullPageDisplayStartDate: new Date(2019, 8, 20), //@ type {Date object}
+
+    /**
+     * re-définir l'URL à ouvrir au click sur le bouton en fonction de la langue utilisée
+     * "https://onestla.tech/" par défaut
+     */
+    customStrikeFrURL: "https://yourwebsite/en-greve",
+    customStrikeEnURL: "https://yourwebsite/call-to-strike"
   };
 </script>
 ```
