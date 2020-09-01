@@ -16,7 +16,7 @@ The widget is made of two parts:
 $ npm install
 
 # serve with hot reload at localhost:8080. Test the iframe with http://127.0.0.1:8080/demo.html.
-$ npm run dev
+$ npm start
 
 # build for production
 $ npm run build

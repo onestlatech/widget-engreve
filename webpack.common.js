@@ -138,9 +138,9 @@ module.exports = {
       inlineSource: '.(js|css)$',
       language: 'en'
     }),
-    new CopyPlugin([
+    new CopyPlugin({ patterns: [
       { from: 'static', to: '' }
-    ]),
+    ]}),
     new MiniCssExtractPlugin({
       filename: 'app.[hash].css',
       chunkFilename: '[id].css',
