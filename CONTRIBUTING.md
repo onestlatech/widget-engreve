@@ -1,4 +1,15 @@
-## Contributing to this repository
+# Contributing to this repository
+
+## Language
+
+> refer to [CONTRIBUER.md](./CONTRIBUER.md) for a French and more up-to-date version of this document
+
+Almost all contributors and potential users of this project are French. Therefore, we follow the following rules: 
+
+- code (name of variables, functions and comments) should be written in English (by convention)
+- documentation and discussions (issues and PR) should be written in French (to allow understanding and contribution to people who do not have a sufficient level in English)
+
+## What compose this project
 
 The widget is made of two parts:
 
@@ -16,7 +27,7 @@ The widget is made of two parts:
 $ npm install
 
 # serve with hot reload at localhost:8080. Test the iframe with http://127.0.0.1:8080/demo.html.
-$ npm start
+$ npm run dev
 
 # build for production
 $ npm run build
@@ -48,7 +59,12 @@ You can modify settings by editing `docker-compose.yml` file. The container need
 
 ## Localization
 
-The widget can be localized, including the date format. Following changes are needed:
+Right now, the widget only support 2 languages for text content and dates localisation:
+
+- french (`fr`/`fr-FR`)
+- english (`en`/`en-US`)
+
+Following changes are needed to add a new language:
 
 - `src/index.js`: constants `LOCALE_CODE_MAPPING` and `GLOBAL_STRIKE_URLS` (only if there's relevant language version of https://globalclimatestrike.net/ site) need to be adjusted. For language codes, please refer to https://gist.github.com/wpsmith/7604842
 - `webpack.common.js`: edit `plugins` array and add a new HtmlWebPackPlugin instance based on your language code
