@@ -82,16 +82,25 @@ function handleCloseButtonClick(event) {
   postMessage('closeButtonClicked')
 }
 
-function handleJoinStrikeButtonClick(event) {
+const handleJoinStrikeButtonClick = (stayInWindow) => (event) => {
   event.preventDefault()
   event.stopPropagation()
 
-  postMessage('buttonClicked', { linkUrl: joinUrls[language] })
+  if (stayInWindow) {
+    postMessage('buttonClicked', { linkUrl: joinUrls[language] })
+  } else {
+    const newWindow = window.open(joinUrls[language], '_blank');
+    newWindow.focus();
+  }
 }
 
-function setGlobalStrikeLinkUrl(selector) {
+function setGlobalStrikeLinkUrl(selector, stayInWindow) {
   const element = document.querySelector(selector)
   element.setAttribute('href', joinUrls[language])
+  if (!stayInWindow && element.nodeName === 'a') {
+    element.setAttribute('target', '_blank')
+    element.setAttribute('rel', 'noopener noreferrer')
+  }
 }
 
 function attachEvent(selector, event, callback) {
@@ -117,17 +126,18 @@ function initializeInterface() {
   const fullPageDisplayStartDate = new Date(Date.parse(query.fullPageDisplayStartDate))
   const fullPageDisplayStopDate = new Date(fullPageDisplayStartDate.getTime() + MS_PER_DAY)
   const isFullPage = !query.minMode || todayIs(fullPageDisplayStartDate)
+  const stayInWindow = query.popup !== 'true'
 
   joinUrls = isFullPage ? GLOBAL_STRIKE_FULL_PAGE_URLS : GLOBAL_STRIKE_URLS
 
-  setGlobalStrikeLinkUrl('.dcs-footer .dcs-button')
-  setGlobalStrikeLinkUrl('.dcs-footer__logo')
-  setGlobalStrikeLinkUrl('.dcs-full-page .dcs-button')
-  setGlobalStrikeLinkUrl('.dcs-full-page__logo')
+  setGlobalStrikeLinkUrl('.dcs-footer .dcs-button', stayInWindow)
+  setGlobalStrikeLinkUrl('.dcs-footer__logo', stayInWindow)
+  setGlobalStrikeLinkUrl('.dcs-full-page .dcs-button', stayInWindow)
+  setGlobalStrikeLinkUrl('.dcs-full-page__logo', stayInWindow)
   attachEvent('.dcs-close', 'click', handleCloseButtonClick)
-  attachEvent('.dcs-button', 'click', handleJoinStrikeButtonClick)
-  attachEvent('.dcs-footer__logo', 'click', handleJoinStrikeButtonClick)
-  attachEvent('.dcs-full-page__logo', 'click', handleJoinStrikeButtonClick)
+  attachEvent('.dcs-button', 'click', handleJoinStrikeButtonClick(stayInWindow))
+  attachEvent('.dcs-footer__logo', 'click', handleJoinStrikeButtonClick(stayInWindow))
+  attachEvent('.dcs-full-page__logo', 'click', handleJoinStrikeButtonClick(stayInWindow))
 
   language = query.language ? query.language : language
 

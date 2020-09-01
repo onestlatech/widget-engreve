@@ -1,3 +1,4 @@
+/* eslint-disable */
 (function() {
   'use strict';
   var DOM_ID = 'DIGITAL_STRIKE';
@@ -19,6 +20,7 @@
   var alwaysShowWidget = !!(options.alwaysShowWidget || window.location.hash.indexOf('ALWAYS_SHOW_DIGITAL_STRIKE') !== -1);
   var disableGoogleAnalytics = !!options.disableGoogleAnalytics;
   var showCloseButtonOnFullPageWidget = !!options.showCloseButtonOnFullPageWidget;
+  var popup = options.popup;
   var language = getLanguage();
 
   function getIframeSrc() {
@@ -35,6 +37,7 @@
     showCloseButtonOnFullPageWidget && urlParams.push(['showCloseButtonOnFullPageWidget', 'true']);
     disableGoogleAnalytics && urlParams.push(['googleAnalytics', 'false']);
     websiteName && urlParams.push(['websiteName', encodeURI(websiteName)]);
+    popup && urlParams.push(['popup', 'true']);
 
     var params = urlParams.map(function(el) {
       return el.join('=');
@@ -92,7 +95,12 @@
   }
 
   function navigateToLink(linkUrl) {
-    document.location = linkUrl;
+    if (!popup) {
+      document.location = linkUrl;
+    } else {
+      var win = window.open(linkUrl, '_blank');
+      win.focus();
+    }
   }
 
   function injectCSS(id, css) {

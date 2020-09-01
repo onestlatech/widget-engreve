@@ -17,6 +17,7 @@
     var iframeDir = document.URL.substr(0,document.URL.lastIndexOf('/'));
     var minMode = window.location.toString().indexOf('minMode') !== -1;
     var showCloseButton = window.location.toString().indexOf('showCloseButton') !== -1;
+    var popup = window.location.toString().indexOf('popup') !== -1;
 
     var urlParams = new URLSearchParams(window.location.search);
     var language = urlParams.get('language') ? urlParams.get('language') : 'fr';
@@ -28,7 +29,8 @@
       showCloseButtonOnFullPageWidget: showCloseButton,
       alwaysShowWidget: true,
       websiteName: websiteName,
-      language: language
+      language: language,
+      popup: popup
     };
   </script>
   <script src="widget.js"></script>
